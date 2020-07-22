@@ -24,6 +24,17 @@ describe('success', () => {
       enhancement: 20,
     });
   });
+
+  it('should change name if enhancement > 0', () => {
+    let item = {
+      name: 'item2',
+      enhancement: 20,
+      durability: 3,
+    };
+    expect(enhancer.get(item)).toMatchObject({
+      name: '[+20] item2',
+    });
+  });
 });
 
 describe('fail', () => {
